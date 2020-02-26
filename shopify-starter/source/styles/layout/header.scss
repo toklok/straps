@@ -1,0 +1,147 @@
+$navbar-background: rgba(255, 255, 255, 0.962);
+$navbar-height-offers: 45px;
+$navbar-height-desktop: 60px;
+$navbar-height-mobile: 55px;
+$navbar-font-size: 1rem;
+
+$navbar-logo-desktop-height: 35px;
+$navbar-logo-desktop-width: 50px;
+$navbar-logo-mobile-height: 45px;
+$navbar-logo-mobile-width: 110px;
+
+$navbar-navbar-font-size: 1rem;
+$navbar-navbar-font-weight: 600;
+$navbar-navbar-spacing: 15px;
+
+$navbar-icon-search: 15px;
+$navbar-icon-hamburger: 28px;
+$navbar-icon-cart: 28px;
+
+$header-height-desktop: $navbar-height-desktop + $offers-height-desktop;
+$header-height-mobile: $navbar-height-mobile + $offers-height-mobile;
+
+.header {
+	position: relative;
+	text-transform: uppercase;
+	background-color: $white;
+
+	> .row {
+		height: $navbar-height-desktop;
+
+		@include media-breakpoint-down(md) {
+			height: $navbar-height-mobile;
+		}
+	}
+
+	.bd-md-left,
+	.bd-right,
+	.bd-md-right,
+	.bd-bottom {
+		border-color: $gray-200;
+	}
+
+	.icon {
+		fill: $black;
+	}
+
+	.icon-hamburger {
+		width: $navbar-icon-hamburger;
+		height: $navbar-icon-hamburger;
+	}
+
+	.icon-logo-text {
+		width: $navbar-logo-mobile-width;
+		height: $navbar-logo-mobile-height;
+	}
+
+	.icon-logo-avatar {
+		width: $navbar-logo-desktop-width;
+		height: $navbar-logo-desktop-height;
+	}
+
+	.icon-search {
+		width: $navbar-icon-search;
+		height: $navbar-icon-search;
+	}
+
+	.icon-help,
+	.icon-user-login {
+		width: 20px;
+		height: 20px;
+	}
+
+	.icon-shopping-bag {
+		width: $navbar-icon-cart;
+		height: $navbar-icon-cart;
+	}
+
+	.navbar {
+		color: $black;
+		font-weight: $navbar-navbar-font-weight;
+		font-size: $navbar-navbar-font-size;
+
+		@include media-breakpoint-down(md) {
+			font-size: $navbar-navbar-font-size;
+		}
+
+		li {
+			display: inline;
+			margin-right: $navbar-navbar-spacing;
+			padding-right: $navbar-navbar-spacing;
+			border-right: 1px solid $gray-400;
+
+			a:hover {
+				color: lighten($black-100, 20%);
+				text-decoration: none;
+			}
+
+			&.active > a {
+				color: $gray;
+			}
+
+			&:last-child {
+				margin-right: 0;
+				border-right: none;
+			}
+		}
+	}
+
+	.locale {
+
+		> img {
+			max-width: 24px;
+		}
+
+		> span {
+			font-size: 1rem;
+		}
+
+		&:hover {
+
+			.popover__shipping {
+				display: block;
+
+				&:after,
+				&:before {
+					left: 80%;
+				}
+
+				&:after {
+					border-bottom-color: $gray-200;
+				}
+			}
+		}
+	}
+
+	&__cart {
+		font-weight: 600;
+
+		@include media-breakpoint-down(xs) {
+			border-left: none;
+		}
+
+		a > span > .count {
+			font-weight: 600;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "function-paren-newline": [
+      "error",
+      {
+        "minItems": 3
+      }
+    ]
+  }
+}

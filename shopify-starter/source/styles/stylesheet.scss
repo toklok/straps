@@ -1,0 +1,30 @@
+// BOOTSTRAP PRESETS
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// CUSTOM PRESETS
+@import "base/variables";
+@import "base/aspect-ratio";
+
+// BOOTSTRAP BASE
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/grid";
+
+// BOOTSTRAP UTILITIES
+@import "bootstrap/scss/utilities/flex";
+@import "bootstrap/scss/utilities/align";
+@import "bootstrap/scss/utilities/display";
+@import "bootstrap/scss/utilities/spacing";
+
+// CUSTOM BASE
+@import "base/flex";
+@import "base/text-align";
+
+// LAYOUT
+@import "layout/header";
+
+
+// CONTROLLERS
+@import "sections/collection-slideshow";
+

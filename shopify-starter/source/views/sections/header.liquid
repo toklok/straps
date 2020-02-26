@@ -1,0 +1,220 @@
+{%- comment -%}
+Constants
+{%- endcomment -%}
+{%- assign item = section.settings  -%}
+
+<div class="row align-items-center bd-bottom">
+
+  {%- comment -%}
+  Mobile Menu
+  {%- endcomment -%}
+  <div class="col d-md-none" data-turbolinks-permanent id="menu-open">
+    <button
+      aria-expanded="false"
+      aria-label=" {{- 'layout.drawers.open_menu' | t -}}"
+      data-drawer="mobile-menu"
+      type="button">
+      {%- include 'icon.hamburger' | type: 'sprite' -%}
+    </button>
+  </div>
+
+  {%- comment -%}
+  Brand Logo
+  {%- endcomment -%}
+  <div
+    class="col col-md-auto d-md-flex h-md-100 bd-md-right text-center text-md-left"
+    data-turbolinks-permanent
+    id="logo">
+    <a class="align-self-md-center" href="/" title="{{ 'homepage.title' | t }}">
+      {%- include 'icon.logo-avatar' | class: 'd-none d-md-flex' -%}
+      {%- include 'icon.logo-text' | type: 'sprite' class: 'd-md-none' -%}
+    </a>
+  </div>
+
+  {%- comment -%}
+  Main Menu
+  {%- endcomment -%}
+  <nav class="col align-self-center d-none d-md-block">
+    <ul class="navbar">
+      {%- for link in linklists.next-main-menu.links -%}
+        <li {% if link.active -%} class="active" {%- endif -%}>
+          <a href="{{- link.url -}}" alt="{{ link.title }}" data-prefetch="true">
+            {%- unless link.handle == 'search' -%}
+              {{- link.title -}}
+            {%- else -%}
+              {% include 'icon.search' %}
+            {%- endunless -%}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+
+  {%- comment -%}
+  Support Menu
+  {%- endcomment -%}
+  <div
+    class="col-auto align-self-center d-none d-md-block bd-right"
+    data-turbolinks-permanent
+    id="support-menu">
+    <a class="reveal-hover" href="{{ item.contact_url }}">
+      {%- include 'icon.help' | class: 'd-md-none' -%}
+      <span class="d-none d-lg-block">
+        {{ 'layout.customer.account' | t }}
+      </span>
+    </a>
+    <div class="reveal-block d-none">
+      <div class="strike-sm">
+        <span>
+          {{ 'header.support.support' | t }}
+        </span>
+      </div>
+      <a href="{{ item.contact_url }}">m {%- include 'icon.mail' -%}
+        {{ 'header.support.contact' | t }}
+      </a>
+      <a href="{{ settings.social_messenger_link }}" target="_blank">
+        {%- include 'icon.messenger' -%}
+        {{ 'header.support.messenger' | t }}
+      </a>
+      <a href="{{ settings.social_twitter_link }}" target="_blank">
+        {%- include 'icon.twitter' | type: 'sprite' -%}
+        {{ 'header.support.twitter' | t }}
+      </a>
+      <div class="strike-sm">
+        <span>
+          {{ 'header.support.information' | t }}
+        </span>
+      </div>
+      <ul class="text-center">
+        {%- for link in linklists[item.support_menu].links -%}
+          <li {% if link.active -%} class="active" {%- endif -%}>
+            <a href="{{- link.url -}}" alt="{{ link.title }}">
+              {{- link.title -}}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+      <div class="ribbon">
+        {%- include 'icon.mail' -%}
+        {%- assign weekend = order.created_at | date: "%a" -%}
+        {%- if weekend == 'Sat' or weekend == 'Sun' -%}
+          {{ 'header.support.response'  | t | prepend: '24 '  }}
+        {%- else -%}
+          {{ 'header.support.response'  | t | prepend: '12 '  }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%}
+  Account Menu
+  {%- endcomment -%}
+  <div
+    class="col-auto align-self-center d-none d-md-block bd-right"
+    data-turbolinks-permanent
+    id="account-menu">
+    {%- if customer -%}
+      <a class="reveal-hover" href="/account">
+        {%- if customer.first_name != blank -%}
+          {{ customer.first_name }}
+        {% else %}
+          {{ 'layout.customer.account' | t }}
+        {%- endif -%}
+      </a>
+      <div class="reveal-block">
+        <ul>
+          <li>
+            {{ 'layout.customer.log_out' | t | customer_logout_link }}
+          </li>
+        </ul>
+      </div>
+    {%- else -%}
+      <a href="/account" title="{{ 'layout.customer.account' | t }}">
+        {%- include 'icon.user-login' | class: 'd-block d-lg-none' -%}
+        <span class="d-none d-lg-block">
+          {{ 'layout.customer.account' | t }}
+        </span>
+      </a>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%}
+  Locale
+  {%- endcomment -%}
+  <div
+    class="col-auto align-self-center d-none d-md-block"
+    data-turbolinks-permanent
+    id="locale">
+    <button class="locale" type="button">
+      {%- if shop.permanent_domain == 'brixtol.myshopify.com' -%}
+        <img src="{{ 'flag-eu.svg' | asset_url }}">
+        <span>EU</span>
+      {%- else -%}
+        <img src="{{ 'flag-se.svg' | asset_url }}">
+        <span>SE</span>
+      {%- endif -%}
+    </button>
+  </div>
+
+  {%- comment -%}
+  Ajax Cart
+  {%- endcomment -%}
+  <div
+    class="col col-md-auto d-md-flex h-md-100 bd-md-left text-right"
+    data-turbolinks-permanent
+    id="cart-open">
+    <a
+      aria-expanded="false"
+      aria-label=" {{- 'layout.drawers.open_cart' | t -}}"
+      class="align-self-md-center"
+      data-drawer="ajax-cart"
+      href="/cart">
+      {%- include 'icon.shopping-bag' | type: 'sprite' -%}
+      <span data-target="drawer.cart-count">
+        {{ cart.item_count }}
+      </span>
+    </a>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "class": "container-fluid header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Main Menu",
+      "info": "The navigation to be used for the main menu."
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "default": "main-menu",
+      "label": "Select navigation"
+    },
+    {
+      "type": "header",
+      "content": "Support",
+      "info": "Customize the customer support link and hover block."
+    },
+    {
+      "id": "support_link_text",
+      "type": "text",
+      "label": "Title"
+    },
+    {
+      "type": "url",
+      "id": "support_link_url",
+      "label": "URL"
+    },
+    {
+      "type": "link_list",
+      "id": "support_block_menu",
+      "label": "Links"
+    }
+  ]
+}
+{% endschema %}

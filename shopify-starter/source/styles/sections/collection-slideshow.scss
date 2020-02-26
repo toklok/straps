@@ -1,0 +1,26 @@
+.collection-slideshow {
+	position: relative;
+
+	.previous,
+	.next {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		width: 50px;
+		height: 100%;
+	}
+
+	.previous {
+		left: 0;
+	}
+
+	.next {
+		right: 0;
+	}
+
+	.icon {
+		width: 40px;
+		height: 40px;
+	}
+}

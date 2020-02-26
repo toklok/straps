@@ -1,0 +1,85 @@
+{%- comment -%}
+  Constants
+{%- endcomment -%}
+{%- assign item = section.settings  -%}
+{%- assign slides = item.slides -%}
+
+<div
+  class="row justify-content-between no-gutters flush px-2 mb-3"
+  data-controller="slideshow"
+  data-slideshow-slides=" {{- item.slides -}}">
+
+  <div class="previous d-flex align-items-center">
+    <button aria-label="Previous" data-action="slideshow#prev" type="button">
+      {%- include 'icon.chevron-left' -%}
+    </button>
+  </div>
+
+  <div class="col-12">
+    <div class="row no-gutters" data-target="slideshow.slides">
+      {%- for product in collections[item.collection].products -%}
+
+        {%- unless forloop.index > 6  -%}
+          {%- assign grid = 'col px-2' -%}
+        {%- else -%}
+          {%- assign grid = 'col px-2 d-none' -%}
+        {%- endunless -%}
+
+        {%- include 'product', grid: grid, target: 'slideshow.slide'  -%}
+
+        {%- if forloop.index > 15  -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="next d-flex align-items-center">
+    <button aria-label="Next" data-action="slideshow#next" type="button">
+      {%- include 'icon.chevron-right' -%}
+    </button>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Collection Slideshow",
+  "class": "collection-slideshow",
+  "tag": "section",
+  "settings": [
+    {
+      "label": "Collection",
+      "id": "collection",
+      "type": "collection"
+    },
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop_slideshow",
+      "label": "Loop slideshow",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "slides",
+      "min": 4,
+      "max": 8,
+      "step": 1,
+      "unit": "sec",
+      "label": "Showing",
+      "default": 6,
+      "info": "Number of products to show"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Slideshow",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

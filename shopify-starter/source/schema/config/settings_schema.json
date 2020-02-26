@@ -1,0 +1,514 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Example Name",
+    "theme_author": "Sissel Siv",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://help.shopify.com/manual/using-themes/themes-by-shopify/debut",
+    "theme_support_email": "nicos@gmx.se"
+  },
+  {
+    "name": "Company",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Company details",
+        "info": "Company details are used throughout the website."
+      },
+      {
+        "type": "text",
+        "id": "company_founded",
+        "label": "Founded"
+      },
+      {
+        "type": "text",
+        "id": "company_vat_number",
+        "label": "VAT Number"
+      },
+      {
+        "type": "text",
+        "id": "company_trademark_number",
+        "label": "Trademark Number"
+      }
+    ]
+  },
+  {
+    "name": "API",
+    "settings": [
+      {
+        "type": "header",
+        "content": "API Tokens",
+        "info": "API Tokens for third party integrated services."
+      },
+      {
+        "type": "text",
+        "id": "instagram_api_token",
+        "label": "Instagram API Token"
+      }
+    ]
+  },
+  {
+    "name": "Preferences",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "checkbox",
+        "id": "layout_header_overlay",
+        "label": "Overlay Header",
+        "default": true,
+        "info": "Applied to [Home page](//) only."
+      },
+      {
+        "type": "header",
+        "content": "Locale",
+        "info": "Automatically localize your online store visitors"
+      },
+      {
+        "type": "checkbox",
+        "id": "automatic_locale",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "paragraph",
+        "content": "For more information regarding the Locale feature refer to the theme [locale](//) documentation."
+      },
+      {
+        "type": "header",
+        "content": "Currency",
+        "info": "Support multiple currencies on your online store"
+      },
+      {
+        "type": "checkbox",
+        "id": "currency_conversion",
+        "label": "Multiple currency",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "currency_formatting",
+        "label": "Money Format",
+        "default": "without_currency",
+        "options": [
+          {
+            "value": "with_currency",
+            "label": "With Currency ($ 10.00 USD)"
+          },
+          {
+            "value": "without_currency",
+            "label": "Without Currency ($ 10.00)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "supported_currencies",
+        "label": "Currencies",
+        "placeholder": "CAD, EUR, AUD",
+        "info": "Enter comma seperated currency codes or use the silk [currency selector](//) helper tool."
+      },
+      {
+        "type": "header",
+        "content": "Shipping Rates"
+      },
+      {
+        "type": "checkbox",
+        "id": "shipping_rates",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Progress Bar",
+        "info": "Customize the progress bar indicator."
+      },
+      {
+        "type": "checkbox",
+        "id": "progress_bar",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "progress_bar_height",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "unit": "px",
+        "label": "Height",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "progress_bar_delay",
+        "min": 100,
+        "max": 2000,
+        "step": 100,
+        "unit": "ms",
+        "label": "Delay",
+        "default": 500
+      },
+      {
+        "type": "paragraph",
+        "content": "Please refer to the [Turbolinks](https://github.com/turbolinks/turbolinks#displaying-progress) documentation for more information."
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Font Smoothing"
+      },
+      {
+        "type": "checkbox",
+        "id": "font_smoothing",
+        "label": "Enabled",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "label": "Heading font",
+        "id": "font_family_heading",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Body"
+      },
+      {
+        "type": "font_picker",
+        "label": "Body font",
+        "id": "font_family_body",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "range",
+        "id": "font_size_body",
+        "min": 8,
+        "max": 25,
+        "step": 1,
+        "unit": "px",
+        "label": "Size",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "font_weight_body",
+        "min": 100,
+        "max": 900,
+        "step": 100,
+        "label": "Weight",
+        "default": 400
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "font_picker",
+        "label": "Header font",
+        "id": "font_family_header",
+        "default": "roboto_n7",
+        "info": "Header font family (typography)."
+      },
+      {
+        "type": "range",
+        "id": "font_size_header",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Menu Size",
+        "default": 12,
+        "info": "Header font size."
+      },
+      {
+        "type": "range",
+        "id": "font_weight_header",
+        "min": 100,
+        "max": 900,
+        "step": 100,
+        "label": "Menu Weight",
+        "default": 400,
+        "info": "Header link font thickness."
+      },
+      {
+        "type": "range",
+        "id": "font_size_banner",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Banner Size",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "font_weight_banner",
+        "min": 100,
+        "max": 900,
+        "step": 100,
+        "label": "Banner Weight",
+        "default": 300
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Base"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_body",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "color_links",
+        "label": "Links",
+        "default": "#354086"
+      },
+      {
+        "type": "color",
+        "id": "color_borders",
+        "label": "Borders",
+        "default": "#e5e5e5"
+      },
+      {
+        "type": "color",
+        "id": "color_progress_bar",
+        "label": "Progress Bar",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "color_header_bg",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "color_header_link",
+        "label": "Link",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "color_header_link_hover",
+        "label": "Link Hover",
+        "default": "#999999"
+      },
+      {
+        "type": "header",
+        "content": "Banner",
+        "info": "Customize the header colors"
+      },
+      {
+        "type": "color",
+        "id": "color_banner_bg",
+        "label": "Banner Background",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "color_banner_link",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_banner_link_hover",
+        "label": "Link Hover",
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_bg",
+        "label": "Background",
+        "default": "#f2f2f2"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_text",
+        "label": "Text",
+        "default": "#636363"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_social_link",
+        "label": "Social media icons",
+        "default": "#bbbbbb"
+      }
+    ]
+  },
+  {
+    "name": "Product Item",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Locale",
+        "info": "Automatically localize your online store visitors"
+      }
+    ]
+  },
+  {
+    "name": "Search",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Search"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "Image will be scaled down to 32 x 32px"
+      }
+    ]
+  },
+  {
+    "name": "Products",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Products"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook URL",
+        "info": "https://facebook.com/username"
+      },
+      {
+        "type": "text",
+        "id": "social_messenger_link",
+        "label": "Facebook Messenger",
+        "info": "https://m.me/username"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram URL",
+        "info": "https://instagram.com/username"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest URL",
+        "info": "https://instagram.com/username"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter URL",
+        "info": "https://twitter.com/username"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube Channel URL",
+        "info": "https://youtube.com/username"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat URL",
+        "info": "https://snapchat.com/add/username"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "LinkedIn URL",
+        "info": "https://linkedin.com/username"
+      },
+      {
+        "type": "text",
+        "id": "social_github_link",
+        "label": "Github URL",
+        "info": "https://github.com/username"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr URL",
+        "info": "https://tumblr.com/username"
+      },
+      {
+        "type": "text",
+        "id": "social_vk_link",
+        "label": "VKontakte URL",
+        "info": "https://vk.com/username"
+      }
+    ]
+  },
+  {
+    "name": "Custom Code",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Custom Code",
+        "info": "Add some custom HTML, CSS or JavaScript. You do not have to include wrapping tags. "
+      },
+      {
+        "type": "header",
+        "content": "CSS"
+      },
+      {
+        "type": "textarea",
+        "id": "custom_css"
+      },
+      {
+        "type": "header",
+        "content": "HTML"
+      },
+      {
+        "type": "textarea",
+        "id": "custom_html"
+      },
+      {
+        "type": "header",
+        "content": "JavaScript"
+      },
+      {
+        "type": "textarea",
+        "id": "custom_javascript"
+      }
+    ]
+  }
+]

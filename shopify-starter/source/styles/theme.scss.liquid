@@ -1,0 +1,105 @@
+
+/* -------------------------------------------- */
+/*                  TYPEOGRAPHY                 */
+/* -------------------------------------------- */
+
+$heading-font-family: {{ settings.font_family_heading | append: 'px' }};
+
+/* -------------------------------------------- */
+/*                     BODY                     */
+/* -------------------------------------------- */
+
+$body-font-size: {{ settings.font_size_body | append: 'px' }};
+$body-font-weight: {{ settings.font_weight_body }};
+$body-bg: {{ settings.color_bg_body }};
+$body-color: {{ settings.color_text }};
+$body-links: {{ settings.color_links }};
+$border-color: {{ settings.color_borders }};
+
+/* -------------------------------------------- */
+/*                 PROGRESS BAR                 */
+/* -------------------------------------------- */
+
+$progress-bar-color: {{ settings.color_progress_bar }};
+$progress-bar-height:  {{ settings.progress_bar_height | append: 'px' }};
+
+/* -------------------------------------------- */
+/*                    HEADER                    */
+/* -------------------------------------------- */
+
+$header-size: {{ settings.font_size_header | append: 'px' }};
+$header-weight: {{ settings.font_weight_header }};
+$header-link: {{ settings.color_header_link }};
+$header-hover: {{ settings.color_header_link_hover }};
+$header-bg: transparent !default;
+$header-overlay: false !default;
+
+/* -------------------------------------------- */
+/*                    BANNER                    */
+/* -------------------------------------------- */
+
+$banner-bg: {{ settings.color_banner_bg }};
+$banner-size: {{ settings.font_size_banner  | append: 'px' }};
+$banner-weight: {{ settings.font_weight_banner }};
+$banner-color: {{ settings.color_banner_link }};
+
+/* -------------------------------------------- */
+/*                  STYLESHEET                  */
+/* -------------------------------------------- */
+
+body {
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  color: $body-color;
+  background-color: $body-bg;
+}
+
+a {
+  color: $body-links;
+
+  &:focus,
+  &:hover {
+    color: $header-hover;
+  }
+}
+
+header {
+  font-size: $header-size;
+  font-weight: $header-weight;
+  color: $header-link;
+  background-color: $header-bg;
+
+
+  a {
+    color: $header-link;
+
+    &:focus,
+    &:hover {
+      color: $header-hover;
+    }
+  }
+
+  &.overlay {
+    background-color: transparent;
+
+    &:hover {
+      background-color: #ffffff;
+    }
+  }
+
+  .banner {
+    background-color: $banner-bg;
+    font-size: $banner-size;
+    font-weight: $banner-weight;
+    color: $banner-color;
+
+    a {
+      color: $header-link;
+
+      &:focus,
+      &:hover {
+        color: $header-hover;
+      }
+    }
+  }
+}

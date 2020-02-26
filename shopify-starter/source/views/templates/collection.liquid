@@ -1,0 +1,80 @@
+{%- paginate collection.products by 50 -%}
+
+  <div class="row justify-content-between no-gutter bg-smoke">
+
+    {%- comment -%}
+    Filter Collection
+    {%- endcomment -%}
+
+    <div class="col-auto bg-white d-none d-md-block bd-right px-0">
+      {%- section 'filter-products' -%}
+    </div>
+
+    <div class="col bg-white box-shadow-top">
+
+      {%- comment -%}
+      Collection Sorting
+    {%- endcomment -%}
+      <div
+        class="row collection__sorting bg-white bd-bottom d-none d-md-flex"
+        data-sticky="filter-sorting">
+        <div class="col align-self-center">
+          {%- section 'collection-sorting' -%}
+        </div>
+      </div>
+
+      {%- comment -%}
+      Collection Searched Products
+    {%- endcomment -%}
+      <div id="collection-search"></div>
+
+      {%- comment -%}
+        Collection Products
+      {%- endcomment -%}
+      {% section 'collection' %}
+
+
+      <div id="collection-pagination" data-pages="{{ paginate.pages }}">
+        <div class="row align-content-center justify-content-center">
+          <div class="col-4 py-5">
+            <ul
+              class="pagination pagination-md justify-content-center mb-3"
+              id="pagination">
+              {%- if paginate.previous -%}
+                <li class="page-item">
+                  <a class="page-link prev-url" href="{{ paginate.previous.url }}" data-turbolinks-preload="true">
+                    <svg class="icon">
+                      <use xlink:href="#chevron-left"></use>
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- for part in paginate.parts -%}
+                {%- if part.is_link -%}
+                  <li class="page-item">
+                    <a class="page-link" href="{{ part.url }}" data-turbolinks-preload="true">
+                      {{ part.title }}
+                    </a>
+                  </li>
+                {%- else -%}
+                  <li class="page-item active">
+                    <a class="page-link" href="#">{{ part.title }}</a>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+              {%- if paginate.next -%}
+                <li class="page-item">
+                  <a class="page-link next-url" href="{{ paginate.next.url }}" data-turbolinks-preload="true">
+                    <svg class="icon">
+                      <use xlink:href="#chevron-right"></use>
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endpaginate -%}

@@ -1,0 +1,16 @@
+/node_modules
+/.DS_Store
+/html
+/theme
+/yarn.lock
+/yarn-error.log
+/sync.config.json
+/build/ssl/localhost.crt
+/build/ssl/localhost.key
+/.vscode
+/src/assets/icons/.ignore
+/email
+/files
+/export/production.zip
+/export/development.zip
+/export/staging.zip

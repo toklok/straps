@@ -1,0 +1,23 @@
+{
+  "concurrency": 20,
+  "targets": [
+    {
+      "target_name": "production",
+      "api_key": "",
+      "password": "",
+      "domain": "example",
+      "primary_domain": "https://your-shop.myshopify.com",
+      "theme_name": "Development",
+      "theme_id": 123456
+    },
+    {
+      "target_name": "production",
+      "api_key": "",
+      "password": "",
+      "domain": "example",
+      "primary_domain": "https://your-shop.myshopify.com",
+      "theme_name": "Production",
+      "theme_id": 123456
+    }
+  ]
+}

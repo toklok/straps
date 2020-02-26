@@ -1,0 +1,31 @@
+/* -------------------------------------------- */
+/*                 ASPECT RATIO                 */
+/* -------------------------------------------- */
+
+@mixin aspect-ratio($width, $height, $background) {
+  position: relative;
+
+  &::before {
+    display: block;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+    background-color: $background;
+    content: '';
+  }
+
+  > .product__item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
