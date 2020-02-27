@@ -1,7 +1,6 @@
 {
-  "name": "brixtol-theme",
+  "name": "strap",
   "version": "0.0.1",
-  "description": "NPM Packages for the Brixtol Textiles webshop",
   "scripts": {
     "sync": "sync",
     "scripts": "rollup --config build/rollup.config.js -w"
